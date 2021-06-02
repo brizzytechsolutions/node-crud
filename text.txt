@@ -1,0 +1,4 @@
+https://gabrieleromanato.name/nodejs-the-mvc-design-pattern-and-the-crud-model-in-expressjs
+https://zellwk.com/blog/crud-express-mongodb/
+https://medium.com/fbdevclagos/developing-basic-crud-operations-with-node-express-and-mongodb-e754acb9cc15
+https://www.edureka.co/blog/node-js-mongodb-tutorial/
