@@ -2,24 +2,24 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const port = 3000;
-const Router = require('router');
-const uri = 'mongodb://localhost:27017/KabzaUniversityDB';
+const cors = require('cors');
+require('dotenv/config');
 
-const router = Router();
+app.use(express.json());
 
-mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000,
- }).then(() => {
-       console.log('Database successfully connected')
+mongoose.connect(
+  process.env.DB_CONNECTION, {
+    useNewUrlParser: true, useUnifiedTopology: true
     },
-    error => {
-       console.log('Database could not connected: ' + error)
-    }
- )
+    console.log('Db Connected')
+ );
 
-app.get('/', function (req, res) {
+ const pageRoutes = require('./routes');
+
+ app.use(cors());
+ app.use('/', pageRoutes);
+
+app.get('/', (req, res) => {
   res.send('hello world');
 });
 
